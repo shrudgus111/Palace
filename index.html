@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link
+    rel="stylesheet"
+    type="text/css"
+    href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+  /> -->
+    <!-- AOS 라이브러리 불러오기-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+    type="text/javascript"
+    src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+  ></script>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+    <style>
+        /* body {
+            cursor:url('./public/assets/image/sy1.png'), auto;
+        } */
+        .wrap {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999999999999999999;
+           
+            transition: all 0.5s ease;
+            display: none;
+        }
+        
+        .popup img {
+            width: 100%;
+          
+        }
+        
+        .popup.on {
+           
+            display: block;
+        }
+        
+        .popup .close {
+            background: #fff;
+            color: #000;
+            padding: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-weight: 700;
+        }
+        
+        .popup .close button {
+            background: #fff;
+            color: #000;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            border: none;
+            font-weight: 700;
+        }
+        .introAni {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        /* background:linear-gradient(to right, #D44177 0%, #0C68BE 100%) !important; */
+        background: #fff;
+        color: #143b63;
+        
+        text-align: center;
+        /* opacity: 0.4; */
+        z-index: 999999999999999999999999999999999999999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .introText{
+            font-size: 50px;
+        /* font-weight: 800; */
+         font-family: 'Black Han Sans', 'Gowun Dodum';
+            font-weight: lighter;
+        }
+      }
+      .introAni img {
+    width:30%;
+    margin-bottom: 30px;
+      }
+   
+   
+       
+        @media screen and (max-width: 768px){
+          .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999999999999999999;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: none;
+        }
+        
+        .popup img {
+          display: none;
+            width: 100%;
+        }
+        
+        .popup.on {
+            opacity: 1;
+            display: none;
+        }
+        
+        .popup .close {
+            background: #fff;
+            color: #000;
+            padding: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-weight: 700;
+            display: none;
+        }
+        
+        .popup .close button {
+            background: #fff;
+            color: #000;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            border: none;
+            font-weight: 700;
+            display: none;
+        }
+        }
+    </style>
+    <!-- <script src="./js/jquery-1.12.4.min.js"></script> -->
+  <script type="module" crossorigin src="./assets/index.0d95e42a.js"></script>
+  <link rel="stylesheet" href="./assets/index.bca39148.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="popup">
+        <img src="./assets/image/popup.jpg" alt="" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-delay="2000"
+        data-aos-duration="1000">
+        <div class="close">
+            오늘하루 창열지 않기 <input type="checkbox" />
+            <button type="button">닫기</button>
+        </div>
+    </div>
+   
+    <div class="introAni">
+       
+            <div><img src="./assets/image/intro_logo.gif" alt="
+                "></div>
+            <div class="introText">0%</div>
+       
+      </div>
+     
+    <div id="app"></div>
+    
+</div>
+
+<script>
+
+    
+    
+    // 팝업창 열고닫기
+    $(".popup .close button").on("click", function () {
+        if ($(this).prev().prop("checked")) {
+            let tts = Date.now() + 100000; // 지금부터 1분 40초후
+            const obj = {
+                check: "yes",
+                expire: tts,
+            };
+            localStorage.setItem("objkey", JSON.stringify(obj));
+        }
+        $(".popup").removeClass("on");
+    });
+
+    $(window).on("load", function () {
+        $("html").animate(
+            {
+                scrollTop: 0,
+            },
+            100
+        );
+
+        let objString = localStorage.getItem("objkey");
+        if (objString) {
+            const obj = JSON.parse(objString);
+            if (Date.now() > obj.expire) {
+                $(".popup").addClass("on");
+                localStorage.removeItem("objkey");
+            } else {
+                $(".popup").removeClass("on");
+            }
+        } else {
+            $(".popup").addClass("on");
+        }
+    });
+    setTimeout(function () {
+        let count = 0;
+        let timer = setInterval(function () {
+            count++;
+            if (count >= 100) {
+                clearInterval(timer);
+                $(".introAni").fadeOut(500, function () {
+                    $(this).remove();
+                });
+            }
+            $(".introAni div")
+                .eq(1)
+                .text(count + "%");
+        }, 25);
+    }, 1);
+
+</script>
+  <!-- AOS 스크립트 시작 -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script> 
+    AOS.init(); // 자바스크립트로 init()을 해야 동작한다.
+</script>
+
+</body>
+</html>

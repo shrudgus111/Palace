@@ -1,0 +1,40 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+main, .listStyle{
+  background-color: #fff;
+}
+ul {
+  list-style-type: none;
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background:none; 
+}
+input[type="text"] {
+  border: none;
+}
+
+body { 
+  background:#F9FAFB
+}
+.row{
+  max-width: 750px; margin:auto;
+}
